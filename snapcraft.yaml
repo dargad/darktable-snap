@@ -1,5 +1,5 @@
 name: darktable
-version: 1
+version: "2.1.0"
 summary: photo worklow software
 description: |
   darktable is an open source photography workflow application
@@ -9,17 +9,17 @@ confinement: devmode
 
 apps:
     darktable:
-        command: desktop-launch darktable --moduledir $SNAP/lib/darktable --datadir $SNAP/share/darktable
+        command: desktop-launch darktable --moduledir $SNAP/lib/darktable --datadir $SNAP/share/darktable --localedir $SNAP/share/locale --configdir $SNAP_USER_DATA
         plugs: [home, unity7, x11, gsettings]
 
 parts:
     darktable:
         source: git://github.com/darktable-org/darktable.git
         source-type: git
+        source-tag: release-2.1.0
         plugin: cmake
         configflags:
-            - -DRUNTIME_INSTALL_PREFIX=/snap/darktable/current
-#            - -DCMAKE_INSTALL_PREFIX=/snap/darktable/current
+            - -DCMAKE_BUILD_TYPE=Release
         build-packages:
             - intltool
             - libcurl4-gnutls-dev
