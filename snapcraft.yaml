@@ -16,7 +16,7 @@ parts:
     darktable:
         source: git://github.com/darktable-org/darktable.git
         source-type: git
-        source-tag: release-2.1.0
+        source-tag: release-2.0.5
         plugin: cmake
         configflags:
             - -DCMAKE_BUILD_TYPE=Release
