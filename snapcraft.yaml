@@ -1,5 +1,6 @@
 name: darktable
-version: "2.0.5"
+grade: devel
+version: "2.0.6"
 summary: photo worklow software
 description: |
   darktable is an open source photography workflow application
@@ -16,7 +17,7 @@ parts:
     darktable:
         source: git://github.com/darktable-org/darktable.git
         source-type: git
-        source-tag: release-2.0.5
+        source-tag: release-2.0.6
         plugin: cmake
         configflags:
             - -DCMAKE_BUILD_TYPE=Release
