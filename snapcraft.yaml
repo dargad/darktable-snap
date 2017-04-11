@@ -24,6 +24,8 @@ parts:
         plugin: cmake
         configflags:
             - -DCMAKE_BUILD_TYPE=Release
+        stage-packages:
+            - libmirclient9
         build-packages:
             - g++
             - intltool
@@ -44,7 +46,9 @@ parts:
             - liblcms2-dev
             - liblua5.2-dev
             - liblensfun-dev
+            - libmirclient-dev
             - libopenjpeg-dev
+            - libopenjp2-7-dev
             - libosmgpsmap-1.0-dev
             - libpugixml-dev
             - libpulse-dev
@@ -63,6 +67,7 @@ parts:
             - libxml2-dev
             - libxml2-utils
             - libxslt1-dev
+            - llvm-dev
             #- openjdk-8-jre
             - xsltproc
         after: [desktop-gtk3]
