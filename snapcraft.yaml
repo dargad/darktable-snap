@@ -1,19 +1,17 @@
-name: darktable
-grade: devel
+name: darktable-empanada
 version: "2.2.4"
 summary: photo worklow software
 description: |
   darktable is an open source photography workflow application
   and RAW developer
-
-#confinement: devmode
-confinement: strict
-#confinement: classic
+grade: stable
+confinement: classic
+icon: snap/gui/icon.svg
 
 apps:
-    darktable:
-        command: desktop-launch darktable --moduledir $SNAP/lib/darktable --datadir $SNAP/share/darktable --localedir $SNAP/share/locale --configdir $SNAP_USER_DATA --tmpdir /tmp
-        plugs: [home, unity7, x11, gsettings]
+    darktable-empanada:
+        command: bin/darktable --moduledir $SNAP/lib/darktable --datadir $SNAP/share/darktable --localedir $SNAP/share/locale --configdir $SNAP_USER_DATA --tmpdir /tmp
+#        plugs: [home, unity7, x11, gsettings]
 
 parts:
     darktable:
