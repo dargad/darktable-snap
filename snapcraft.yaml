@@ -1,5 +1,5 @@
 name: darktable-empanada
-version: "2.2.4"
+version: "2.2.5"
 summary: photo worklow software
 description: |
   darktable is an open source photography workflow application
@@ -11,14 +11,13 @@ icon: snap/gui/icon.svg
 apps:
     darktable-empanada:
         command: bin/darktable --moduledir $SNAP/lib/darktable --datadir $SNAP/share/darktable --localedir $SNAP/share/locale --configdir $SNAP_USER_DATA --tmpdir /tmp
-#        plugs: [home, unity7, x11, gsettings]
+        plugs: [home, unity7, x11, gsettings]
 
 parts:
     darktable:
-        #source: /home/dgd/devel/darktable
-        source: git://github.com/darktable-org/darktable.git
+        source: https://github.com/darktable-org/darktable.git
         source-type: git
-        source-tag: release-2.2.4
+        source-tag: release-2.2.5
         plugin: cmake
         configflags:
             - -DCMAKE_BUILD_TYPE=Release
